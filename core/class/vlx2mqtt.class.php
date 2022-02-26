@@ -33,7 +33,7 @@ class vlx2mqtt extends eqLogic {
         log::add(__CLASS__, 'debug', __('Mise à jour du statut de la liaison MQTT', __FILE__) . ' : ' . $_message['status']);
         config::save('status', $_message['status'], __CLASS__);
         if ($_message['status'] == 'CONNECTED') {
-          self::registerTopics();
+          self::registerVeluxs();
         }
       }
     } else {
@@ -42,8 +42,8 @@ class vlx2mqtt extends eqLogic {
         log::add(__CLASS__, 'debug', $velux->getHumanName() . ' ' . __('Position du velux', __FILE__) . ' : ' . $_message[$currentVlx]['position']);
         $velux->checkAndUpdateCmd('state', $_message[$currentVlx]['position']);
       } else {
-        self::registerTopics($currentVlx);
-        log::add(__CLASS__, 'debug', $currentVlx . ' - ' . __('position reçue', __FILE__) . ' : ' . $_message[$currentVlx]['position']);
+        self::registerVeluxs($currentVlx);
+        log::add(__CLASS__, 'debug', '[' . $currentVlx . '] ' . __('Position reçue', __FILE__) . ' : ' . $_message[$currentVlx]['position']);
       }
     }
   }
@@ -145,7 +145,7 @@ class vlx2mqtt extends eqLogic {
     return false;
   }
 
-  public static function registerTopics($_velux = false) {
+  public static function registerVeluxs($_velux = false) {
     $registeredVlxs = self::getRegisteredVeluxs();
     $subscribeds = ($_velux) ? array('vlx2mqtt/' . $_velux) : self::searchDockerLogs('Subscribing to');
     foreach ($subscribeds as $subscribed) {
