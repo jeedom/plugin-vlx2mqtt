@@ -47,7 +47,7 @@ Chaque équipement **Velux MQTT** dispose de ces commandes :
 
 - **Etat** : position actuelle du velux.
 
->**IMPORTANT**
+>**ASTUCE**
 >
 >Par défaut, l'interface KLF 200 fournit un pourcentage de fermeture *(100% = fermé)* que le plugin transforme en pourcentage d'ouverture. Si vous voulez revenir au fonctionnement par défaut, il suffit de décocher la case **Inverser** de la commande **Etat**.
 
