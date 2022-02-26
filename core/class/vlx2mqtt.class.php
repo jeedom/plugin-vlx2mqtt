@@ -42,6 +42,7 @@ class vlx2mqtt extends eqLogic {
         log::add(__CLASS__, 'debug', $velux->getHumanName() . ' ' . __('Position du velux', __FILE__) . ' : ' . $_message[$currentVlx]['position']);
         $velux->checkAndUpdateCmd('state', $_message[$currentVlx]['position']);
       } else {
+        self::registerTopics($currentVlx);
         log::add(__CLASS__, 'debug', $currentVlx . ' - ' . __('position reçue', __FILE__) . ' : ' . $_message[$currentVlx]['position']);
       }
     }
@@ -144,11 +145,11 @@ class vlx2mqtt extends eqLogic {
     return false;
   }
 
-  public static function registerTopics() {
+  public static function registerTopics($_velux = false) {
     $registeredVlxs = self::getRegisteredVeluxs();
-    $Subscribeds = self::searchDockerLogs('Subscribing to');
-    foreach ($Subscribeds as $Subscribed) {
-      $velux = explode('/', $Subscribed)[1];
+    $subscribeds = ($_velux) ? array('vlx2mqtt/' . $_velux) : self::searchDockerLogs('Subscribing to');
+    foreach ($subscribeds as $subscribed) {
+      $velux = explode('/', $subscribed)[1];
       if (!is_object(self::byLogicalId('vlx2mqtt::' . $velux, __CLASS__)) && !in_array($velux, $registeredVlxs)) {
         log::add(__CLASS__, 'debug', __('Détection d\'un nouveau velux', __FILE__) . ' : ' . $velux);
         event::add('jeedom::alert', array(
@@ -161,14 +162,12 @@ class vlx2mqtt extends eqLogic {
     }
     if (!empty($registeredVlxs)) {
       cache::set('vlx2mqtt::veluxs', json_encode($registeredVlxs));
-    } else {
-      cache::byKey('vlx2mqtt::veluxs')->remove();
     }
   }
 
   public static function getRegisteredVeluxs() {
-    if (is_json($cache = cache::byKey('vlx2mqtt::veluxs')->getValue())) {
-      return json_decode($cache, true);
+    if (cache::exist('vlx2mqtt::veluxs')) {
+      return json_decode(cache::byKey('vlx2mqtt::veluxs')->getValue(), true);
     }
     return array();
   }
@@ -199,7 +198,7 @@ class vlx2mqtt extends eqLogic {
         return preg_split('/\\r\\n|\\r|\\n/', $result);
       }
     }
-    return false;
+    return array();
   }
 
   /*     * *********************** Méthodes d'instance *************************** */
