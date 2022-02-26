@@ -25,10 +25,6 @@
     "documentation": "https:\/\/doc.jeedom.com\/#language#\/plugins\/automation protocol\/vlx2mqtt\/",
     "changelog_beta": "https:\/\/doc.jeedom.com\/#language#\/plugins\/automation protocol\/vlx2mqtt\/beta\/changelog",
     "documentation_beta": "https:\/\/doc.jeedom.com\/#language#\/plugins\/automation protocol\/vlx2mqtt\/beta",
-    "link": {
-        "forum": "Lien vers le forum",
-        "video": "Lien vers une video"
-    },
     "language": [
         "fr_FR",
         "en_US",
@@ -38,7 +34,6 @@
     ],
     "compatibility": [
         "rpi",
-        "docker",
         "diy",
         "mobile",
         "v4",
