@@ -207,21 +207,33 @@ class vlx2mqtt extends eqLogic {
   /*     * *********************** Méthodes d'instance *************************** */
 
   public function postSave() {
+    $refresh = $this->getCmd('action', 'refresh');
+    if (!is_object($refresh)) {
+      $refresh = new vlx2mqttCmd();
+      $refresh->setEqLogic_id($this->getId());
+      $refresh->setLogicalId('refresh');
+      $refresh->setName(__('Rafraichir', __FILE__));
+      $refresh->setOrder(0);
+    }
+    $refresh->setType('action');
+    $refresh->setSubType('other');
+    $refresh->save();
+
     $state = $this->getCmd('info', 'state');
     if (!is_object($state)) {
       $state = new vlx2mqttCmd();
       $state->setEqLogic_id($this->getId());
       $state->setLogicalId('state');
       $state->setName(__('Etat', __FILE__));
-      $state->setOrder(0);
+      $state->setOrder(1);
       $state->setIsVisible(0);
       $state->setDisplay('invertBinary', 1);
       $state->setConfiguration('minValue', 0);
       $state->setConfiguration('maxValue', 100);
+      $state->setUnite('%');
     }
     $state->setType('info');
     $state->setSubType('numeric');
-    $state->setUnite('%');
     $state->save();
 
     $position = $this->getCmd('action', 'position');
@@ -230,17 +242,17 @@ class vlx2mqtt extends eqLogic {
       $position->setEqLogic_id($this->getId());
       $position->setLogicalId('position');
       $position->setName(__('Position', __FILE__));
-      $position->setOrder(1);
+      $position->setOrder(2);
       $position->setConfiguration('minValue', 0);
       $position->setConfiguration('maxValue', 100);
       $position->setTemplate('dashboard', 'core::timeShutter');
       $position->setTemplate('mobile', 'core::timeShutter');
       $position->setDisplay('showNameOndashboard', 0);
       $position->setDisplay('showNameOnmobile', 0);
+      $position->setValue($state->getId());
     }
     $position->setType('action');
     $position->setSubType('slider');
-    $position->setValue($state->getId());
     $position->save();
 
     $up = $this->getCmd('action', 'up');
@@ -250,11 +262,11 @@ class vlx2mqtt extends eqLogic {
       $up->setLogicalId('up');
       $up->setName(__('Ouvrir', __FILE__));
       $up->setDisplay('icon', '<i class="fas fa-chevron-up"></i>');
-      $up->setOrder(2);
+      $up->setOrder(3);
+      $up->setValue($state->getId());
     }
     $up->setType('action');
     $up->setSubType('other');
-    $up->setValue($state->getId());
     $up->save();
 
     $stop = $this->getCmd('action', 'stop');
@@ -264,11 +276,11 @@ class vlx2mqtt extends eqLogic {
       $stop->setLogicalId('stop');
       $stop->setName(__('Stop', __FILE__));
       $stop->setDisplay('icon', '<i class="fas fa-stop"></i>');
-      $stop->setOrder(3);
+      $stop->setOrder(4);
+      $stop->setValue($state->getId());
     }
     $stop->setType('action');
     $stop->setSubType('other');
-    $stop->setValue($state->getId());
     $stop->save();
 
     $down = $this->getCmd('action', 'down');
@@ -278,17 +290,14 @@ class vlx2mqtt extends eqLogic {
       $down->setLogicalId('down');
       $down->setName(__('Fermer', __FILE__));
       $down->setDisplay('icon', '<i class="fas fa-chevron-down"></i>');
-      $down->setOrder(4);
+      $down->setOrder(5);
+      $down->setValue($state->getId());
     }
     $down->setType('action');
     $down->setSubType('other');
-    $down->setValue($state->getId());
     $down->save();
 
-    if ($state->execCmd() == '') {
-      log::add(__CLASS__, 'debug', $this->getHumanName() . ' ' . __('Exécution de la commande STOP pour rafraichir la position du velux', __FILE__));
-      $stop->execute();
-    }
+    $refresh->execute();
   }
 }
 
@@ -313,7 +322,7 @@ class vlx2mqttCmd extends cmd {
           $value = $_options['slider'];
         }
       } else {
-        $value = strtoupper($this->getLogicalId());
+        $value = ($this->getLogicalId() == 'refresh') ? 'STOP' : strtoupper($this->getLogicalId());
       }
       log::add('vlx2mqtt', 'debug', $this->getHumanName() . ' ' . __('Exécution de la commande', __FILE__) . ' : ' . $value);
       try {
