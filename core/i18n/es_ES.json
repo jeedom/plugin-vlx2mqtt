@@ -15,9 +15,9 @@
         "Gestion": "Gestión",
         "Synchroniser": "Sincronizar",
         "Configuration": "Configuración",
-        "Mes Veluxs": "Mis tragaluces",
+        "Mes velux": "Mis tragaluces",
         "Veuillez procéder à la configuration complète du plugin pour commencer": "Continúe con la configuración completa del complemento para comenzar",
-        "veluxs trouvés, cliquer sur \"Synchroniser\" pour créer les équipements correspondants": "tragaluces encontrados, haga clic en \"Sincronizar\" para crear el equipo correspondiente",
+        "velux trouvés, cliquer sur \"Synchroniser\" pour créer les équipements correspondants": "tragaluces encontrados, haga clic en \"Sincronizar\" para crear el equipo correspondiente",
         "Aucun velux trouvé.": "No se han encontrado tragaluces",
         "Rechercher": "Buscar",
         "Equipement visible": "Equipos visibles",
@@ -88,6 +88,6 @@
         "Erreur lors de l\\'éxécution de la commande": "Error al ejecutar el comando"
     },
     "info.json": {
-        "Ce plugin permet le pilotage des veluxs compatibles à travers l'interface VELUX KLF 200. Les plugins officiels Docker Management et MQTT Manager doivent être installés, configurés et fonctionnels.": "Este complemento permite el control de tragaluces compatibles a través de la interfaz VELUX KLF 200. Los complementos oficiales Docker Management y MQTT Manager deben estar instalados, configurados y en funcionamiento"
+        "Ce plugin permet le pilotage des velux compatibles à travers l'interface VELUX KLF 200. Les plugins officiels Docker Management et MQTT Manager doivent être installés, configurés et fonctionnels.": "Este complemento permite el control de tragaluces compatibles a través de la interfaz VELUX KLF 200. Los complementos oficiales Docker Management y MQTT Manager deben estar instalados, configurados y en funcionamiento"
     }
 }

@@ -15,9 +15,9 @@
         "Gestion": "Management",
         "Synchroniser": "To sychronize",
         "Configuration": "Configuration",
-        "Mes Veluxs": "My skylights",
+        "Mes velux": "My skylights",
         "Veuillez procéder à la configuration complète du plugin pour commencer": "Please proceed with full plugin setup to get started",
-        "veluxs trouvés, cliquer sur \"Synchroniser\" pour créer les équipements correspondants": "skylights found, click on \"Synchronize\" to create the corresponding equipment",
+        "velux trouvés, cliquer sur \"Synchroniser\" pour créer les équipements correspondants": "skylights found, click on \"Synchronize\" to create the corresponding equipment",
         "Aucun velux trouvé.": "No skylights found",
         "Rechercher": "To research",
         "Equipement visible": "Visible equipment",
@@ -88,6 +88,6 @@
         "Erreur lors de l\\'éxécution de la commande": "Error while executing the command"
     },
     "info.json": {
-        "Ce plugin permet le pilotage des veluxs compatibles à travers l'interface VELUX KLF 200. Les plugins officiels Docker Management et MQTT Manager doivent être installés, configurés et fonctionnels.": "This plugin allows the control of compatible skylights through the VELUX KLF 200 interface. The official Docker Management and MQTT Manager plugins must be installed, configured and functional"
+        "Ce plugin permet le pilotage des velux compatibles à travers l'interface VELUX KLF 200. Les plugins officiels Docker Management et MQTT Manager doivent être installés, configurés et fonctionnels.": "This plugin allows the control of compatible skylights through the VELUX KLF 200 interface. The official Docker Management and MQTT Manager plugins must be installed, configured and functional"
     }
 }
