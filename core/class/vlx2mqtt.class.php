@@ -102,6 +102,9 @@ class vlx2mqtt extends eqLogic {
       [$mqttConf['ip'], $mqttConf['port'], $mqttConf['user'], $mqttConf['password'], config::byKey('klf_ip', __CLASS__), config::byKey('klf_password', __CLASS__)],
       $configFile
     );
+    if (!is_dir(__DIR__ . '/../../data')) {
+      mkdir(__DIR__ . '/../../data', 0775);
+    }
     file_put_contents(__DIR__ . '/../../data/vlx2mqtt.cfg', $configFile);
 
     log::add(__CLASS__, 'debug', __('Création de l\'équipement Docker Management Velux MQTT', __FILE__));
