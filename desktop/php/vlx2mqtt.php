@@ -22,13 +22,13 @@ $eqLogics = eqLogic::byType($plugin->getId());
 				<span>{{Configuration}}</span>
 			</div>
 		</div>
-		<legend><i class="icon jeedom-volet-ouvert"></i> {{Mes Veluxs}}</legend>
+		<legend><i class="icon jeedom-volet-ouvert"></i> {{Mes velux}}</legend>
 		<?php if (count($eqLogics) == 0) {
 			if (!$docker = vlx2mqtt::getContainer()) {
 				echo '<br><div class="text-center" style="font-size:1.2em;font-weight:bold;">{{Veuillez procéder à la configuration complète du plugin pour commencer}}</div>';
 			} else {
 				if (($countVeluxs = count(vlx2mqtt::getRegisteredVeluxs())) > 0) {
-					echo '<br><div class="text-center" style="font-size:1.2em;font-weight:bold;">' . $countVeluxs . ' {{veluxs trouvés, cliquer sur "Synchroniser" pour créer les équipements correspondants}}</div>';
+					echo '<br><div class="text-center" style="font-size:1.2em;font-weight:bold;">' . $countVeluxs . ' {{velux trouvés, cliquer sur "Synchroniser" pour créer les équipements correspondants}}</div>';
 				} else {
 					echo '<br><div class="text-center" style="font-size:1.2em;font-weight:bold;">{{Aucun velux trouvé.}}</div>';
 				}
