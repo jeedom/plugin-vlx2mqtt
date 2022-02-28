@@ -22,15 +22,15 @@ $eqLogics = eqLogic::byType($plugin->getId());
 				<span>{{Configuration}}</span>
 			</div>
 		</div>
-		<legend><i class="icon jeedom-volet-ouvert"></i> {{Mes velux}}</legend>
+		<legend><i class="icon jeedom-volet-ouvert"></i> {{Mes ouvrants}}</legend>
 		<?php if (count($eqLogics) == 0) {
 			if (!$docker = vlx2mqtt::getContainer()) {
 				echo '<br><div class="text-center" style="font-size:1.2em;font-weight:bold;">{{Veuillez procéder à la configuration complète du plugin pour commencer}}</div>';
 			} else {
 				if (($countVeluxs = count(vlx2mqtt::getRegisteredVeluxs())) > 0) {
-					echo '<br><div class="text-center" style="font-size:1.2em;font-weight:bold;">' . $countVeluxs . ' {{velux trouvés, cliquer sur "Synchroniser" pour créer les équipements correspondants}}</div>';
+					echo '<br><div class="text-center" style="font-size:1.2em;font-weight:bold;">' . $countVeluxs . ' {{volets trouvés, cliquer sur "Synchroniser" pour créer les équipements correspondants}}</div>';
 				} else {
-					echo '<br><div class="text-center" style="font-size:1.2em;font-weight:bold;">{{Aucun velux trouvé.}}</div>';
+					echo '<br><div class="text-center" style="font-size:1.2em;font-weight:bold;">{{Aucun équipement trouvé.}}</div>';
 				}
 			}
 		} else {
@@ -80,10 +80,10 @@ $eqLogics = eqLogic::byType($plugin->getId());
 						<div class="col-lg-6">
 							<legend><i class="fas fa-wrench"></i> {{Paramètres généraux}}</legend>
 							<div class="form-group">
-								<label class="col-sm-4 control-label">{{Nom du velux}}</label>
+								<label class="col-sm-4 control-label">{{Nom de l'ouvrant}}</label>
 								<div class="col-sm-6">
 									<input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display:none;">
-									<input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom du velux}}">
+									<input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'ouvrant}}">
 								</div>
 							</div>
 							<div class="form-group">

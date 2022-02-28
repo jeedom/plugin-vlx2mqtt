@@ -39,7 +39,7 @@ class vlx2mqtt extends eqLogic {
     } else {
       $currentVlx = array_key_first($_message);
       if (is_object($velux = self::byLogicalId('vlx2mqtt::' . $currentVlx, __CLASS__))) {
-        log::add(__CLASS__, 'debug', $velux->getHumanName() . ' ' . __('Position du velux', __FILE__) . ' : ' . $_message[$currentVlx]['position']);
+        log::add(__CLASS__, 'debug', $velux->getHumanName() . ' ' . __('Position reçue', __FILE__) . ' : ' . $_message[$currentVlx]['position']);
         $velux->checkAndUpdateCmd('state', $_message[$currentVlx]['position']);
       } else {
         self::registerVeluxs($currentVlx);
@@ -161,11 +161,11 @@ class vlx2mqtt extends eqLogic {
     foreach ($subscribeds as $subscribed) {
       $velux = explode('/', $subscribed)[1];
       if (!is_object(self::byLogicalId('vlx2mqtt::' . $velux, __CLASS__)) && !in_array($velux, $registeredVlxs)) {
-        log::add(__CLASS__, 'debug', __('Détection d\'un nouveau velux', __FILE__) . ' : ' . $velux);
+        log::add(__CLASS__, 'debug', __('Détection d\'un nouvel ouvrant', __FILE__) . ' : ' . $velux);
         event::add('jeedom::alert', array(
           'level' => 'success',
           'ttl' => 5000,
-          'message' => __('Velux MQTT - Nouveau velux détecté', __FILE__) . ' : ' . $velux,
+          'message' => __('Velux MQTT - Nouvel ouvrant détecté', __FILE__) . ' : ' . $velux,
         ));
         array_push($registeredVlxs, $velux);
       }
@@ -185,7 +185,7 @@ class vlx2mqtt extends eqLogic {
   public static function createEqlogics() {
     foreach (self::getRegisteredVeluxs() as $velux) {
       if (!is_object($eqLogic = self::byLogicalId('vlx2mqtt::' . $velux, __CLASS__))) {
-        log::add(__CLASS__, 'debug', __('Création de l\'équipement velux', __FILE__) . ' : ' . $velux);
+        log::add(__CLASS__, 'debug', __('Création de l\'équipement', __FILE__) . ' : ' . $velux);
         $eqLogic = new self();
         $eqLogic->setEqType_name(__CLASS__);
         $eqLogic->setLogicalId('vlx2mqtt::' . $velux);
