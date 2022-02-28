@@ -78,12 +78,12 @@
         "Détection d\\'un nouveau velux": "Detection of a new skylight",
         "Velux MQTT - Nouveau velux détecté": "Velux MQTT - New velux detected",
         "Création de l\\'équipement velux": "Creation of velux equipment",
+        "Rafraichir": "Refresh",
         "Etat": "State",
         "Position": "Position",
         "Ouvrir": "Open",
         "Stop": "Stop",
         "Fermer": "Close",
-        "Exécution de la commande STOP pour rafraichir la position du velux": "Execution of the STOP command to refresh the position of the skylight",
         "Exécution de la commande": "Execution of the command",
         "Erreur lors de l\\'éxécution de la commande": "Error while executing the command"
     },

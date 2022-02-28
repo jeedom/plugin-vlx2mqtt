@@ -78,12 +78,12 @@
         "Détection d\\'un nouveau velux": "Detección de una nueva claraboya",
         "Velux MQTT - Nouveau velux détecté": "Velux MQTT - Nuevo velux detectado",
         "Création de l\\'équipement velux": "Creación de equipos velux",
+        "Rafraichir": "Actualizar",
         "Etat": "Estado",
         "Position": "Posición",
         "Ouvrir": "Abrir",
         "Stop": "Detener",
         "Fermer": "Cerrar",
-        "Exécution de la commande STOP pour rafraichir la position du velux": "Ejecución del mando STOP para refrescar la posición de la claraboya",
         "Exécution de la commande": "Ejecución del comando",
         "Erreur lors de l\\'éxécution de la commande": "Error al ejecutar el comando"
     },

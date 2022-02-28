@@ -78,12 +78,12 @@
         "Détection d\\'un nouveau velux": "Erkennung eines neuen Dachfensters",
         "Velux MQTT - Nouveau velux détecté": "Velux MQTT - Neues Velux erkannt",
         "Création de l\\'équipement velux": "Erstellung von Velux-Geräten",
+        "Rafraichir": "Aktualisierung",
         "Etat": "Zustand",
         "Position": "Position",
         "Ouvrir": "Offen",
         "Stop": "Stoppen",
         "Fermer": "Nah dran",
-        "Exécution de la commande STOP pour rafraichir la position du velux": "Ausführung des STOP-Befehls zur Aktualisierung der Position des Oberlichts",
         "Exécution de la commande": "Ausführung des Befehls",
         "Erreur lors de l\\'éxécution de la commande": "Fehler beim Ausführen des Befehls"
     },

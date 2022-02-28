@@ -67,6 +67,7 @@
         "Commande d'ouverture du velux": "Befehl zum Öffnen des Dachfensters",
         "Commande d'arrêt du velux": "Befehl zum Stoppen des Oberlichts",
         "Commande de fermeture du velux": "Befehl zum Schließen des Dachfensters",
+        "Envoie un message d'arrêt au velux pour forcer le rafraichissement de la position": "Senden Sie eine Stoppnachricht an das Oberlicht, um die Aktualisierung der Position zu erzwingen",
         " Configuration.": " Aufbau.",
         " Configuration?": " Aufbau?",
         "Configuration ": "Aufbau ",
@@ -171,6 +172,13 @@
         " Fermer]": " Nah dran]",
         "[Fermer]": "[Nah dran]",
         "*Fermer*": "*Nah dran*",
-        " Fermer*": " Nah dran*"
+        " Fermer*": " Nah dran*",
+        " Rafraichir.": " Aktualisierung.",
+        " Rafraichir?": " Aktualisierung?",
+        "Rafraichir ": "Aktualisierung ",
+        " Rafraichir]": " Aktualisierung]",
+        "[Rafraichir]": "[Aktualisierung]",
+        "*Rafraichir*": "*Aktualisierung*",
+        " Rafraichir*": " Aktualisierung*"
     }
 }

@@ -78,12 +78,12 @@
         "Détection d\\'un nouveau velux": "Détection d\\'un nouveau velux",
         "Velux MQTT - Nouveau velux détecté": "Velux MQTT - Nouveau velux détecté",
         "Création de l\\'équipement velux": "Création de l\\'équipement velux",
+        "Rafraichir": "Rafraichir",
         "Etat": "Etat",
         "Position": "Position",
         "Ouvrir": "Ouvrir",
         "Stop": "Stop",
         "Fermer": "Fermer",
-        "Exécution de la commande STOP pour rafraichir la position du velux": "Exécution de la commande STOP pour rafraichir la position du velux",
         "Exécution de la commande": "Exécution de la commande",
         "Erreur lors de l\\'éxécution de la commande": "Erreur lors de l\\'éxécution de la commande"
     },

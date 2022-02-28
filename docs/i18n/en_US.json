@@ -67,6 +67,7 @@
         "Commande d'ouverture du velux": "Skylight opening command",
         "Commande d'arrêt du velux": "Skylight stop command",
         "Commande de fermeture du velux": "Skylight closing command",
+        "Envoie un message d'arrêt au velux pour forcer le rafraichissement de la position": "Send a stop message to the skylight to force the refresh of the position",
         " Configuration.": " Configuration.",
         " Configuration?": " Configuration?",
         "Configuration ": "Configuration ",
@@ -171,6 +172,13 @@
         " Fermer]": " Close]",
         "[Fermer]": "[Close]",
         "*Fermer*": "*Close*",
-        " Fermer*": " Close*"
+        " Fermer*": " Close*",
+        " Rafraichir.": " Refresh.",
+        " Rafraichir?": " Refresh?",
+        "Rafraichir ": "Refresh ",
+        " Rafraichir]": " Refresh]",
+        "[Rafraichir]": "[Refresh]",
+        "*Rafraichir*": "*Refresh*",
+        " Rafraichir*": " Refresh*"
     }
 }

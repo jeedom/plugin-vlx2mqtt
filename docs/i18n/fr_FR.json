@@ -75,6 +75,8 @@
         "Stop": "Stop",
         "Commande d'arrêt du velux": "Commande d'arrêt du velux",
         "Fermer": "Fermer",
-        "Commande de fermeture du velux": "Commande de fermeture du velux"
+        "Commande de fermeture du velux": "Commande de fermeture du velux",
+        "Rafraichir": "Rafraichir",
+        "Envoie un message d'arrêt au velux pour forcer le rafraichissement de la position": "Envoie un message d'arrêt au velux pour forcer le rafraichissement de la position"
     }
 }

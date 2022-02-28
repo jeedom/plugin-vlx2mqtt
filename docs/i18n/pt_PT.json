@@ -67,6 +67,7 @@
         "Commande d'ouverture du velux": "Comando de abertura da clarabóia",
         "Commande d'arrêt du velux": "Comando de parada da clarabóia",
         "Commande de fermeture du velux": "Comando de fechamento da claraboia",
+        "Envoie un message d'arrêt au velux pour forcer le rafraichissement de la position": "Envie uma mensagem de parada para a clarabóia para forçar a atualização da posição",
         " Configuration.": " Configuração.",
         " Configuration?": " Configuração?",
         "Configuration ": "Configuração ",
@@ -171,6 +172,13 @@
         " Fermer]": " Fechar]",
         "[Fermer]": "[Fechar]",
         "*Fermer*": "*Fechar*",
-        " Fermer*": " Fechar*"
+        " Fermer*": " Fechar*",
+        " Rafraichir.": " Atualizar.",
+        " Rafraichir?": " Atualizar?",
+        "Rafraichir ": "Atualizar ",
+        " Rafraichir]": " Atualizar]",
+        "[Rafraichir]": "[Atualizar]",
+        "*Rafraichir*": "*Atualizar*",
+        " Rafraichir*": " Atualizar*"
     }
 }
