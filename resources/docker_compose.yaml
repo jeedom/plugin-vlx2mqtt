@@ -3,6 +3,6 @@ services:
   velux:
     container_name: vlx2mqtt
     image: phpmonkeys/vlx2mqtt:latest
-    restart: unless-stopped
+    restart: always
     volumes:
       - #jeedom_path#/plugins/vlx2mqtt/data/vlx2mqtt.cfg:/vlx2mqtt.cfg
