@@ -81,13 +81,7 @@ class vlx2mqtt extends eqLogic {
       throw new Exception($errorMessage);
     }
 
-    if (!class_exists('mqtt2')) {
-      include_file('core', 'mqtt2', 'class', 'mqtt2');
-    }
-    if (!isset(mqtt2::getSubscribed()['vlx2mqtt'])) {
-      log::add(__CLASS__, 'debug', __('Souscription au topic vlx2mqtt', __FILE__));
-      mqtt2::addPluginTopic(__CLASS__, 'vlx2mqtt');
-    }
+    self::handleMqttSubscription('suscribe');
 
     log::add(__CLASS__, 'debug', __('Collecte des informations de connexion au broker MQTT', __FILE__));
     $mqttConf = mqtt2::getFormatedInfos();
@@ -146,6 +140,19 @@ class vlx2mqtt extends eqLogic {
       return $docker;
     }
     return false;
+  }
+
+  public static function handleMqttSubscription($_action = 'suscribe') {
+    if (!class_exists('mqtt2')) {
+      include_file('core', 'mqtt2', 'class', 'mqtt2');
+    }
+    $subscribed = isset(mqtt2::getSubscribed()['vlx2mqtt']);
+    if ($_action == 'suscribe' && !$subscribed) {
+      log::add(__CLASS__, 'debug', __('Souscription au topic vlx2mqtt', __FILE__));
+      mqtt2::addPluginTopic(__CLASS__, 'vlx2mqtt');
+    } else if ($_action == 'unsuscribe' && $subscribed) {
+      mqtt2::removePluginTopic('vlx2mqtt');
+    }
   }
 
   public static function registerVeluxs($_velux = false) {
@@ -213,7 +220,9 @@ class vlx2mqtt extends eqLogic {
       $refresh->setEqLogic_id($this->getId());
       $refresh->setLogicalId('refresh');
       $refresh->setName(__('Rafraichir', __FILE__));
+      $refresh->setDisplay('icon', '<i class="fas fa-sync-alt"></i>');
       $refresh->setOrder(0);
+      $refresh->setIsVisible(0);
     }
     $refresh->setType('action');
     $refresh->setSubType('other');
