@@ -15,10 +15,10 @@
         "Gestion": "Gestion",
         "Synchroniser": "Synchroniser",
         "Configuration": "Configuration",
-        "Mes velux": "Mes velux",
+        "Mes ouvrants": "Mes ouvrants",
         "Veuillez procéder à la configuration complète du plugin pour commencer": "Veuillez procéder à la configuration complète du plugin pour commencer",
-        "velux trouvés, cliquer sur \"Synchroniser\" pour créer les équipements correspondants": "velux trouvés, cliquer sur \"Synchroniser\" pour créer les équipements correspondants",
-        "Aucun velux trouvé.": "Aucun velux trouvé.",
+        "volets trouvés, cliquer sur \"Synchroniser\" pour créer les équipements correspondants": "volets trouvés, cliquer sur \"Synchroniser\" pour créer les équipements correspondants",
+        "Aucun équipement trouvé.": "Aucun équipement trouvé.",
         "Rechercher": "Rechercher",
         "Equipement visible": "Equipement visible",
         "Equipement non visible": "Equipement non visible",
@@ -29,7 +29,7 @@
         "Equipement": "Equipement",
         "Commandes": "Commandes",
         "Paramètres généraux": "Paramètres généraux",
-        "Nom du velux": "Nom du velux",
+        "Nom de l'ouvrant": "Nom de l'ouvrant",
         "Objet parent": "Objet parent",
         "Aucun": "Aucun",
         "Catégorie": "Catégorie",
@@ -61,7 +61,6 @@
     },
     "plugins\/vlx2mqtt\/core\/class\/vlx2mqtt.class.php": {
         "Mise à jour du statut de la liaison MQTT": "Mise à jour du statut de la liaison MQTT",
-        "Position du velux": "Position du velux",
         "Position reçue": "Position reçue",
         "Installation du conteneur docker Velux MQTT...": "Installation du conteneur docker Velux MQTT...",
         "Le plugin": "Le plugin",
@@ -71,13 +70,13 @@
         "Le démon du plugin": "Le démon du plugin",
         "n\\'est pas démarré": "n\\'est pas démarré",
         "Les informations de connexion au KLF 200 ne sont pas renseignées": "Les informations de connexion au KLF 200 ne sont pas renseignées",
-        "Souscription au topic vlx2mqtt": "Souscription au topic vlx2mqtt",
         "Collecte des informations de connexion au broker MQTT": "Collecte des informations de connexion au broker MQTT",
         "Ecriture du fichier de configuration docker": "Ecriture du fichier de configuration docker",
         "Création de l\\'équipement Docker Management Velux MQTT": "Création de l\\'équipement Docker Management Velux MQTT",
-        "Détection d\\'un nouveau velux": "Détection d\\'un nouveau velux",
-        "Velux MQTT - Nouveau velux détecté": "Velux MQTT - Nouveau velux détecté",
-        "Création de l\\'équipement velux": "Création de l\\'équipement velux",
+        "Souscription au topic vlx2mqtt": "Souscription au topic vlx2mqtt",
+        "Détection d\\'un nouvel ouvrant": "Détection d\\'un nouvel ouvrant",
+        "Velux MQTT - Nouvel ouvrant détecté": "Velux MQTT - Nouvel ouvrant détecté",
+        "Création de l\\'équipement": "Création de l\\'équipement",
         "Rafraichir": "Rafraichir",
         "Etat": "Etat",
         "Position": "Position",
@@ -88,6 +87,6 @@
         "Erreur lors de l\\'éxécution de la commande": "Erreur lors de l\\'éxécution de la commande"
     },
     "info.json": {
-        "Ce plugin permet le pilotage des velux compatibles à travers l'interface VELUX KLF 200. Les plugins officiels Docker Management et MQTT Manager doivent être installés, configurés et fonctionnels.": "Ce plugin permet le pilotage des velux compatibles à travers l'interface VELUX KLF 200. Les plugins officiels Docker Management et MQTT Manager doivent être installés, configurés et fonctionnels."
+        "Ce plugin permet le pilotage des velux et des ouvrants \"io-homecontrol\" compatibles avec l'interface VELUX KLF 200 (volets roulants Somfy par exemple). Les plugins officiels Docker Management et MQTT Manager doivent être installés, configurés et fonctionnels.": "Ce plugin permet le pilotage des velux et des ouvrants \"io-homecontrol\" compatibles avec l'interface VELUX KLF 200 (volets roulants Somfy par exemple). Les plugins officiels Docker Management et MQTT Manager doivent être installés, configurés et fonctionnels."
     }
 }
