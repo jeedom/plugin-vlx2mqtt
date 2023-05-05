@@ -39,7 +39,7 @@
         "Informations": "Information",
         "Description": "Description",
         "Nom": "Name",
-        "Type": "Type",
+        "Type": "Kind",
         "Actions": "Shares"
     },
     "plugins\/vlx2mqtt\/desktop\/js\/vlx2mqtt.js": {
